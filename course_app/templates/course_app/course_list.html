@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course List</title>
+</head>
+<body>
+    <h1>Course List</h1>
+    <a href="{% url 'course_app:logout' %}"><button>Logout</button></a>
+    <ul>
+        {% for course in courses %}
+            <li>
+                <a href="{% url 'course_app:course_detail' course.id %}"><strong>{{ course.title }}</strong></a><br>
+                Average Rating: {{ course.average_rate }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
